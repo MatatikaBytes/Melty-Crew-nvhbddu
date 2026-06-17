@@ -1,0 +1,31 @@
+{
+  "plugin_type": "extractors",
+  "name": "tap-meltano",
+  "namespace": "tap_meltano",
+  "variant": "matatika",
+  "label": "Meltano",
+  "docs": "https://www.matatika.com/docs/instant-insights/tap-meltano/",
+  "repo": "https://github.com/Matatika/tap-meltano",
+  "pip_url": "git+https://github.com/Matatika/tap-meltano.git@v0.5.0",
+  "description": "Meltano is an open-source data integration tool.\n\nMeltano is a free and open-source data integration tool that allows users to extract, load, and transform data from various sources into a data warehouse. It provides a user-friendly interface for managing data pipelines and supports a wide range of data sources, including databases, APIs, and file formats. Meltano also offers a suite of plugins and integrations for popular data tools like Google Analytics, Salesforce, and HubSpot, making it easy to connect and manage data from multiple sources in one place. With Meltano, users can automate data pipelines, monitor data quality, and collaborate with team members on data projects.\n### Prerequisites\nThe Meltano database URI can be obtained from the Meltano instance that you are connecting to. It is typically provided by the administrator or the person who set up the Meltano instance. If you do not know the Meltano database URI, you can ask the administrator or the person who set up the instance for this information.",
+  "logo_url": "/assets/images/datasource/tap-meltano.png",
+  "capabilities": [
+    "catalog",
+    "discover",
+    "state"
+  ],
+  "settings": [
+    {
+      "name": "meltano_database_uri",
+      "kind": "string",
+      "value": "$MELTANO_DATABASE_URI",
+      "label": "Meltano database uri",
+      "description": "The URI for the Meltano database.",
+      "hidden": false,
+      "sensitive": true,
+      "required": "true",
+      "configured": false,
+      "protected": false
+    }
+  ]
+}

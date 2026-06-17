@@ -25,6 +25,9 @@ plugins:
   - name: tap-mssql
     variant: matatika
     pip_url: git+https://github.com/Matatika/pipelinewise-tap-mssql.git@v1.0.3
+  - name: tap-meltano
+    variant: matatika
+    pip_url: git+https://github.com/Matatika/tap-meltano.git@v0.5.0
   loaders:
   - name: target-postgres
     variant: matatika
