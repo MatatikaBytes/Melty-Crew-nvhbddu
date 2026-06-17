@@ -1,0 +1,16 @@
+{
+  "plugin_type": "extractors",
+  "name": "tap-aconex",
+  "namespace": "tap_aconex",
+  "variant": "fostersdata",
+  "label": "Aconex",
+  "docs": "https://www.matatika.com/data-details/tap-aconex/",
+  "repo": "https://github.com/FostersData/tap-aconex",
+  "pip_url": "git+https://github.com/FostersData/tap-aconex.git",
+  "description": "Aconex is a cloud-based construction management software.\n\nAconex is a platform that helps construction and engineering companies manage their projects by providing tools for document management, communication, and collaboration. It allows users to store and share project information, track progress, and manage workflows. The software is designed to improve efficiency, reduce risk, and increase transparency across all stakeholders involved in a construction project. Aconex is used by companies in various industries, including infrastructure, energy, mining, and real estate.",
+  "logo_url": "/assets/logos/extractors/aconex.png",
+  "capabilities": [
+    "catalog",
+    "discover"
+  ]
+}

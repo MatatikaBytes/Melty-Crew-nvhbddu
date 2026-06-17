@@ -19,6 +19,9 @@ plugins:
   - name: tap-mysql
     variant: matatika
     pip_url: git+https://github.com/Matatika/pipelinewise-tap-mysql.git@v1.0.0
+  - name: tap-aconex
+    variant: fostersdata
+    pip_url: git+https://github.com/FostersData/tap-aconex.git
   loaders:
   - name: target-postgres
     variant: matatika
