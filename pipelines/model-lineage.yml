@@ -1,6 +1,6 @@
 version: pipelines/v0.1
 label: Model Lineages
-schedule: 30 14 * * *
+schedule: '* * * * *'
 timeout: 0
 max_retries: 0
 data_components:
