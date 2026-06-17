@@ -16,6 +16,9 @@ plugins:
   - name: tap-bing-ads
     variant: matatika
     pip_url: git+https://github.com/Matatika/tap-bing-ads-msdk.git@v0.3.1
+  - name: tap-mysql
+    variant: matatika
+    pip_url: git+https://github.com/Matatika/pipelinewise-tap-mysql.git@v1.0.0
   loaders:
   - name: target-postgres
     variant: matatika
