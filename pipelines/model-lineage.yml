@@ -1,13 +1,9 @@
 version: pipelines/v0.1
-label: Model Lineage
+label: Model Lineages
+schedule: 30 14 * * *
 timeout: 0
 max_retries: 0
 data_components:
-- dbt
-- dbt-artifacts
-- matatika
+- tap-google-sheets
 actions:
-- dbt:deps
-- dbt:docs-generate
-- dbt-artifacts:convert-matatika
-- matatika:publish
+- tap-google-sheets
