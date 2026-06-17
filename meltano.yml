@@ -32,6 +32,9 @@ plugins:
   - name: target-bigquery
     variant: matatika
     pip_url: git+https://github.com/Matatika/target-bigquery.git@v1.0
+  - name: target-mssql
+    variant: meltanolabs
+    pip_url: "'target-mssql[azure,pyodbc] @ git+https://github.com/MeltanoLabs/target-mssql.git@v0.1.3'"
   transformers:
   - name: dbt
     variant: dbt-labs

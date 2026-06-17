@@ -1,0 +1,269 @@
+{
+  "plugin_type": "loaders",
+  "name": "target-mssql",
+  "namespace": "target_mssql",
+  "variant": "meltanolabs",
+  "label": "Microsoft SQL Server",
+  "docs": "https://www.matatika.com/data-details/target-mssql/",
+  "repo": "https://github.com/MeltanoLabs/target-mssql",
+  "pip_url": "'target-mssql[azure,pyodbc] @ git+https://github.com/MeltanoLabs/target-mssql.git@v0.1.3'",
+  "description": "Microsoft SQL Server is a relational database management system.\n\nMicrosoft SQL Server is a software tool that allows users to store, manage, and\nretrieve data from relational databases. It provides a secure and scalable platform\nfor businesses to manage their data, with features such as data warehousing, business\nintelligence, and advanced analytics. SQL Server also offers tools for developers\nto build and deploy applications that interact with the database, as well as tools\nfor administrators to manage and monitor the system. Overall, SQL Server is a powerful\nand versatile tool for managing data in a variety of business settings.\n",
+  "logo_url": "/assets/logos/loaders/mssql.png",
+  "capabilities": [
+    "schema-flattening",
+    "about",
+    "stream-maps"
+  ],
+  "settings": [
+    {
+      "name": "host",
+      "kind": "string",
+      "label": "Host",
+      "description": "SQL Server host",
+      "hidden": false,
+      "sensitive": false,
+      "required": "true",
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "port",
+      "kind": "string",
+      "value": "1433",
+      "label": "Port",
+      "description": "SQL Server port",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "username",
+      "kind": "string",
+      "label": "Username",
+      "description": "SQL Server username",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "password",
+      "kind": "string",
+      "label": "Password",
+      "description": "SQL Server password",
+      "hidden": false,
+      "sensitive": true,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "database",
+      "kind": "string",
+      "label": "Database",
+      "description": "SQL Server database",
+      "hidden": false,
+      "sensitive": false,
+      "required": "true",
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "default_target_schema",
+      "kind": "string",
+      "label": "Default Target Schema",
+      "description": "Default target schema to write to",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "table_prefix",
+      "kind": "string",
+      "label": "Table Prefix",
+      "description": "Prefix to add to table name",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "prefer_float_over_numeric",
+      "kind": "boolean",
+      "value": false,
+      "label": "Prefer Float Over Numeric",
+      "description": "Use float data type for numbers (otherwise number type is used)",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "driver",
+      "kind": "options",
+      "value": "pyodbc",
+      "label": "Driver",
+      "description": "The driver to use for the database connection. Use `pymssql` (default) for the built-in driver, or `pyodbc` to use an ODBC driver installed on the host.\n",
+      "options": [
+        {
+          "label": "pymssql",
+          "value": "pymssql"
+        },
+        {
+          "label": "pyodbc",
+          "value": "pyodbc"
+        }
+      ],
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "odbc_driver",
+      "kind": "string",
+      "value": "ODBC Driver 18 for SQL Server",
+      "label": "ODBC Driver",
+      "description": "The ODBC driver name to use when `driver` is set to `pyodbc`.\n",
+      "hidden": true,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "trust_server_certificate",
+      "kind": "boolean",
+      "value": false,
+      "label": "Trust Server Certificate",
+      "description": "Trust the server certificate without validation (useful for self-signed certs).",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "add_record_metadata",
+      "kind": "boolean",
+      "value": true,
+      "label": "Add Record Metadata",
+      "description": "Whether to add metadata columns.",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "batch_size_rows",
+      "kind": "integer",
+      "value": 10000,
+      "label": "Batch Size",
+      "description": "When a batch of rows reaches this size, the target will load it",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "validate_records",
+      "kind": "boolean",
+      "label": "Validate Records",
+      "description": "Whether to validate the schema of the incoming streams",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "flattening_enabled",
+      "kind": "boolean",
+      "label": "Flattening Enabled",
+      "description": "'True' to enable schema flattening and automatically expand nested properties.",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "flattening_max_depth",
+      "kind": "integer",
+      "label": "Flattening Max Depth",
+      "description": "The max depth to flatten schemas.",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "stream_maps",
+      "kind": "object",
+      "label": "Stream Maps",
+      "description": "Config object for stream maps capability. For more information check out [Stream Maps](https://sdk.meltano.com/en/latest/stream_maps.html).",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "azure_blob_storage.account_name",
+      "kind": "string",
+      "label": "Azure Storage Account Name",
+      "description": "Azure Storage account name used as the bulk-load stage.",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "azure_blob_storage.sas_token",
+      "kind": "string",
+      "label": "Azure SAS Token",
+      "description": "Shared Access Signature token for the storage account container (without a leading '?'). Minimum permissions: Read, Write, Create, Delete.\n",
+      "hidden": false,
+      "sensitive": true,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "azure_blob_storage.container",
+      "kind": "string",
+      "label": "Azure Blob Container",
+      "description": "Blob container used as the staging area.",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "azure_blob_storage.path_prefix",
+      "kind": "string",
+      "value": "target-mssql",
+      "label": "Azure Blob Path Prefix",
+      "description": "Virtual directory prefix inside the container.",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "azure_blob_storage.credential",
+      "kind": "string",
+      "label": "Azure Credential Name",
+      "description": "Name of the SQL Server DATABASE SCOPED CREDENTIAL used by OPENROWSET.",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    },
+    {
+      "name": "azure_blob_storage.data_source",
+      "kind": "string",
+      "label": "Azure Data Source Name",
+      "description": "Name of the SQL Server EXTERNAL DATA SOURCE used by OPENROWSET.",
+      "hidden": false,
+      "sensitive": false,
+      "configured": false,
+      "protected": false
+    }
+  ]
+}
