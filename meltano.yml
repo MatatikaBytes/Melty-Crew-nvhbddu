@@ -31,6 +31,9 @@ plugins:
   - name: tap-meltano-cloud
     variant: meltanolabs
     pip_url: git+https://github.com/MeltanoLabs/tap-meltano-cloud.git@v0.1.6
+  - name: tap-snowflake
+    variant: transferwise
+    pip_url: pipelinewise-tap-snowflake
   loaders:
   - name: target-postgres
     variant: matatika
