@@ -47,6 +47,9 @@ plugins:
   - name: target-snowflake
     variant: matatika
     pip_url: git+https://github.com/Matatika/target-snowflake--meltanolabs.git@v0.17.8-2
+  - name: target-clickhouse
+    variant: meltanolabs
+    pip_url: "'target-clickhouse @ git+https://github.com/MeltanoLabs/target-clickhouse.git@v0.3.1'"
   transformers:
   - name: dbt
     variant: dbt-labs
